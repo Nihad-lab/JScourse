@@ -12,3 +12,17 @@ let userAge = 25; // let — можно изменить позже
 userAge = 26; // изменяем значение
 
 console.log(userName, userAge);
+let value = 10; // число
+value = "текст"; // теперь строка — ошибки не будет
+console.log(value); // 'текст'
+
+const fixed = 100;
+// fixed = 200;     // ошибка: Assignment to constant variable
+const name = "Андрей";
+const age = 23;
+const userProfile = {
+  name, // вместо name: name
+  age, // вместо age: age
+  isStudent: false,
+};
+console.log(userProfile);
