@@ -1,62 +1,30 @@
-console.log("Запуск кода в VS Code");
-const user = {
-  name: "Андрей",
-  age: 30,
-  isStudent: true,
-};
-console.log("Hello world"); // вывод строки
-console.dir(console); // просмотр свойств объекта console
-console.table({ a: 1, b: 2 }); // вывод в виде таблицы
-const userName = "Андрей"; // const — значение не изменится
-let userAge = 25; // let — можно изменить позже
-userAge = 26; // изменяем значение
+const personCopy2 = { ...person };
+personCopy2.name = "Alice";
+console.log(person.name); // 'Bob'
 
-console.log(userName, userAge);
-let value = 10; // число
-value = "текст"; // теперь строка — ошибки не будет
-console.log(value); // 'текст'
+function sum(a, b) {
+  const c = a + b;
+  return c;
+}
+const result = sum(5, 3);
+console.log(result); // 8
 
-const fixed = 100;
-// fixed = 200;     // ошибка: Assignment to constant variable
-const name = "Андрей";
-const age = 23;
-const userProfile = {
-  name, // вместо name: name
-  age, // вместо age: age
-  isStudent: false,
-};
-console.log(userProfile);
-// В браузере:
-console.log(window.innerHeight); // высота окна
-// В Node.js:
-console.log(global.process.version); // версия Node.js
-// Универсально:
-console.log(globalThis === window); // true в браузере
-const myCity = {
-  city: "My city",
-  greeting() {
-    // вместо greeting: function() {...}
-    console.log("Greetings!");
-  },
-};
-myCity.greeting(); // вызов метода
-const myCity = {
-  city: "My city",
-  greeting() {
-    // вместо greeting: function() {...}
-    console.log("Greetings!");
-  },
-};
-myCity.greeting(); // вызов метода
-const post = {
-  title: "My post",
-  likes: 5,
-};
+function printName() {
+  console.log("Андрей");
+}
 
-// Объект → JSON (строка)
-const postString = JSON.stringify(post);
-console.log(postString); // {"title":"My post","likes":5}
+setTimeout(printName, 2000); // вызов printName через 2 секунды
 
-// JSON → объект
-const parsedPost = JSON.parse(postString);
-console.log(parsedPost.title); // 'My post'
+const globalVar = "global"; // глобальная область
+
+function myFunc() {
+  const localVar = "local"; // локальная область функции
+  console.log(globalVar); // доступно
+}
+myFunc();
+// console.log(localVar); // ошибка: localVar не определена
+
+if (true) {
+  const blockVar = "inside block";
+}
+// console.log(blockVar); // ошибка
