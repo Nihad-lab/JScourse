@@ -26,3 +26,37 @@ const userProfile = {
   isStudent: false,
 };
 console.log(userProfile);
+// В браузере:
+console.log(window.innerHeight); // высота окна
+// В Node.js:
+console.log(global.process.version); // версия Node.js
+// Универсально:
+console.log(globalThis === window); // true в браузере
+const myCity = {
+  city: "My city",
+  greeting() {
+    // вместо greeting: function() {...}
+    console.log("Greetings!");
+  },
+};
+myCity.greeting(); // вызов метода
+const myCity = {
+  city: "My city",
+  greeting() {
+    // вместо greeting: function() {...}
+    console.log("Greetings!");
+  },
+};
+myCity.greeting(); // вызов метода
+const post = {
+  title: "My post",
+  likes: 5,
+};
+
+// Объект → JSON (строка)
+const postString = JSON.stringify(post);
+console.log(postString); // {"title":"My post","likes":5}
+
+// JSON → объект
+const parsedPost = JSON.parse(postString);
+console.log(parsedPost.title); // 'My post'
