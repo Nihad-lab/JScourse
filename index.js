@@ -1,22 +1,15 @@
-const numbers = [1, 2, 3];
-numbers.forEach((element) => console.log(element * 2)); // 2, 4, 6
-console.log(numbers); // [1, 2, 3]
+const userProfile = { name: "Андрей", commentQuantity: 23, isAgreement: true };
+const { name, commentQuantity } = userProfile;
+console.log(name); // "Андрей"
+console.log(commentQuantity); // 23
+const fruits = ["apple", "banana"];
+const [fruitOne, fruitTwo] = fruits;
+console.log(fruitOne); // "apple"
+console.log(fruitTwo); // "banana"
 
-const fruits = ["apple", "banana", "cherry"];
-fruits.forEach((fruit, index) => console.log(`${index}: ${fruit}`));
-
-const numbers = [1, 2, 3];
-const doubled = numbers.map((num) => num * 2);
-console.log(doubled); // [2, 4, 6]
-console.log(numbers); // [1, 2, 3]
-
-// Правильно
-const arr = [1, 2, 3];
-const result = arr.map((x) => x * 3);
-console.log(result); // [3, 6, 9]
-
-// Ошибка: нет return
-const wrong = arr.map((x) => {
-  x * 3;
-});
-console.log(wrong); // [undefined, undefined, undefined]
+const userInfo = ({ name, commentQuantity }) => {
+  if (!commentQuantity) return `User ${name} has no comments`;
+  return `User ${name} has ${commentQuantity} comments`;
+};
+const profile = { name: "Alice", commentQuantity: 5 };
+console.log(userInfo(profile)); // "User Alice has 5 comments"
