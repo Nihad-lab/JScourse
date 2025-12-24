@@ -1,15 +1,26 @@
-const userProfile = { name: "Андрей", commentQuantity: 23, isAgreement: true };
-const { name, commentQuantity } = userProfile;
-console.log(name); // "Андрей"
-console.log(commentQuantity); // 23
-const fruits = ["apple", "banana"];
-const [fruitOne, fruitTwo] = fruits;
-console.log(fruitOne); // "apple"
-console.log(fruitTwo); // "banana"
+let value = 10;
+if (value > 5) {
+  value += 20;
+}
+console.log(value); // 30
 
-const userInfo = ({ name, commentQuantity }) => {
-  if (!commentQuantity) return `User ${name} has no comments`;
-  return `User ${name} has ${commentQuantity} comments`;
-};
-const profile = { name: "Alice", commentQuantity: 5 };
-console.log(userInfo(profile)); // "User Alice has 5 comments"
+let age = 25;
+if (age > 18) {
+  console.log("Adult");
+}
+if (age >= 12 && age <= 18) {
+  console.log("Teenager");
+}
+if (age < 12) {
+  console.log("Child");
+}
+let age = 25;
+if (age > 18) {
+  console.log("Adult");
+}
+if (age >= 12 && age <= 18) {
+  console.log("Teenager");
+}
+if (age < 12) {
+  console.log("Child");
+}
